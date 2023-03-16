@@ -1,0 +1,75 @@
+@import '../utils';
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 50px;
+
+  &__input {
+    font-size: 16px;
+    line-height: 26px;
+
+    height: 54px;
+
+    padding: 14px 0 14px 16px;
+
+    background: $background_color;
+    border: 1px solid $border_color;
+    border-radius: 4px;
+    color: $placeholder_color;
+  }
+
+  &__phone-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  &__phone {
+    font-size: 12px;
+    line-height: 14px;
+
+    padding-top: 4px;
+    padding-left: 16px;
+
+    color: $placeholder_color;
+  }
+
+  &__select {
+    &__title {
+      font-size: 16px;
+      line-height: 26px;
+
+      color: rgba(0, 0, 0, 0.87);
+
+      padding-bottom: 11px;
+    }
+  }
+
+  &__upload {
+    height: 54px;
+  }
+
+  &__button {
+    align-self: center;
+    cursor: pointer;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+
+    background-color: $button_sign_up_color;
+    width: 100px;
+    height: 34px;
+
+    border-radius: 80px;
+    border: none;
+
+    color: rgba(255, 255, 255, 0.87);
+
+    &:hover {
+
+    }
+  }
+}

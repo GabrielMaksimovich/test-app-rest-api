@@ -1,0 +1,73 @@
+@import '../utils';
+
+.banner {
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/banner.jpeg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  margin-bottom: 140px;
+
+
+  @include onDesktop {
+    max-width: 1170px;
+
+    margin: 0 auto 140px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    max-width: 380px;
+
+    padding: 40px 16px 71px;
+    margin: 0 auto;
+
+    @include onTablet {
+      padding-top: 89px;
+    }
+
+    @include onDesktop {
+      padding-top: 164px;
+    }
+  }
+
+
+  &__title {
+    font-family: 'Nunito', serif;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 40px;
+
+    margin-bottom: 21px;
+
+    text-align: center;
+
+    color: $white_color;
+  }
+
+  &__subtitle {
+    font-family: 'Nunito', serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+
+    text-align: center;
+
+    margin-bottom: 32px;
+
+    color: $white_color;
+  }
+
+  &__button {
+    width: 100px;
+    height: 34px;
+
+    border-radius: 80px;
+    border: none;
+    background-color: $primary_color;
+  }
+}

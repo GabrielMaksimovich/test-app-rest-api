@@ -8,6 +8,7 @@ module.exports = {
     'react/prop-types': 0,
     'react/self-closing-comp': 0,
     'react/display-name': 0,
+    'eslint-disable-next-line jsx-a11y/label-has-associated-control': 0,
 
     // JavaScript
     semi: 0,
