@@ -11,6 +11,7 @@ export const Header = memo(() => {
 
         <nav className="nav">
           <button type="button" className="btn">Users</button>
+
           <button type="button" className="btn">Sign up</button>
         </nav>
       </div>

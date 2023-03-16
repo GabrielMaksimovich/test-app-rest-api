@@ -23,21 +23,21 @@ export const Cards = memo(
     }, []);
 
     return (
-      <div className="card">
-        <h1 className="card__title">
+      <div className="card-profile">
+        <h1 className="card-profile__title">
           Working with GET request
         </h1>
 
-        <div className="card__container">
+        <div className="card-profile__container">
           {cards && (
             <>
               {cards.map(card => (
-                <div key={card.id} className="card__box">
-                  <img className="card__image" src={card.photo} alt="" />
+                <div key={card.id} className="card-box">
+                  <img className="card-box__image" src={card.photo} alt="" />
 
-                  <div className="card__description">
+                  <div className="card-box__description description">
                     <p
-                      className="description_name"
+                      className="description__name"
                     >
                       {card.name}
                     </p>

@@ -7,4 +7,10 @@
   border-radius: 80px;
   border: none;
   background-color: $primary_color;
+
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $hover_color_btn;
+  }
 }

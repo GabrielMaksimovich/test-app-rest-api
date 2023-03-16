@@ -8,9 +8,11 @@ import {
 } from '@mui/material';
 import { client } from '../api/fetchClient';
 import { User } from '../types/user';
+import { Modal } from './Modal';
 
 function LoginForm() {
   const [photoFile, setPhotoFile] = useState<Blob>();
+  const [showModal, setShowModal] = useState(false);
   const [formValues, setFormValues] = useState<User>({
     email: '',
     id: '',
@@ -89,6 +91,7 @@ function LoginForm() {
     try {
       const response = await client.post('/users', formData);
 
+      setShowModal(true);
       // eslint-disable-next-line no-console
       console.log(response);
     } catch (error) {
@@ -98,84 +101,88 @@ function LoginForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="login-form">
-      <input
-        className="login-form__input"
-        type="text"
-        id="username"
-        value={formValues.name}
-        placeholder="Your name"
-        onChange={handleUsernameChange}
-      />
-      <input
-        className="login-form__input"
-        type="email"
-        id="email"
-        value={formValues.email}
-        placeholder="Email"
-        onChange={handleEmailChange}
-      />
-      <div className="login-form__phone-container">
+    <>
+      <form onSubmit={handleSubmit} className="login-form">
         <input
           className="login-form__input"
-          type="tel"
-          id="phone"
-          value={formValues.phone}
-          placeholder="Phone"
-          onChange={handlePhoneChange}
+          type="text"
+          id="username"
+          value={formValues.name}
+          placeholder="Your name"
+          onChange={handleUsernameChange}
         />
-        <p className="login-form__phone">+38 (XXX) XXX - XX - XX</p>
-      </div>
-
-      <div className="login-form__select">
-        <FormControl>
-          <FormLabel id="demo-radio-buttons-group-label">Select your position</FormLabel>
-          <RadioGroup
-            aria-labelledby="demo-radio-buttons-group-label"
-            defaultValue="Frontend developer"
-            onChange={handlePositionChange}
-            value={formValues.position_id}
-            name="radio-buttons-group"
-          >
-            <FormControlLabel value="1" control={<Radio />} label="Frontend developer" />
-            <FormControlLabel value="2" control={<Radio />} label="Backend developer" />
-            <FormControlLabel value="3" control={<Radio />} label="Designer" />
-            <FormControlLabel value="4" control={<Radio />} label="QA" />
-          </RadioGroup>
-        </FormControl>
-      </div>
-
-      <div className="login-form__upload">
-        <div className="file has-name">
-          <label className="file-label" htmlFor="resume">
-            <input
-              id="resume"
-              className="file-input"
-              type="file"
-              name="resume"
-              onChange={handlePhotoChange}
-            />
-            <span className="file-cta">
-              <i className="fas fa-upload"></i>
-              <div className="file-label">
-                Upload
-              </div>
-            </span>
-            <span className="file-name">
-              {formValues.photo ? 'Picture uploaded' : 'No file chosen'}
-            </span>
-          </label>
+        <input
+          className="login-form__input"
+          type="email"
+          id="email"
+          value={formValues.email}
+          placeholder="Email"
+          onChange={handleEmailChange}
+        />
+        <div className="login-form__phone-container">
+          <input
+            className="login-form__input"
+            type="tel"
+            id="phone"
+            value={formValues.phone}
+            placeholder="Phone"
+            onChange={handlePhoneChange}
+          />
+          <p className="login-form__phone">+38 (XXX) XXX - XX - XX</p>
         </div>
-      </div>
 
-      <button
-        type="submit"
-        className="login-form__button"
-        onChange={() => handleSubmit}
-      >
-        Sign Up
-      </button>
-    </form>
+        <div className="login-form__select">
+          <FormControl>
+            <FormLabel id="demo-radio-buttons-group-label">Select your position</FormLabel>
+            <RadioGroup
+              aria-labelledby="demo-radio-buttons-group-label"
+              defaultValue="Frontend developer"
+              onChange={handlePositionChange}
+              value={formValues.position_id}
+              name="radio-buttons-group"
+            >
+              <FormControlLabel value="1" control={<Radio />} label="Frontend developer" />
+              <FormControlLabel value="2" control={<Radio />} label="Backend developer" />
+              <FormControlLabel value="3" control={<Radio />} label="Designer" />
+              <FormControlLabel value="4" control={<Radio />} label="QA" />
+            </RadioGroup>
+          </FormControl>
+        </div>
+
+        <div className="login-form__upload">
+          <div className="file has-name">
+            <label className="file-label" htmlFor="resume">
+              <input
+                id="resume"
+                className="file-input"
+                type="file"
+                name="resume"
+                onChange={handlePhotoChange}
+              />
+              <span className="file-cta">
+                <i className="fas fa-upload"></i>
+                <div className="file-label">
+                  Upload
+                </div>
+              </span>
+              <span className="file-name">
+                {formValues.photo ? 'Picture uploaded' : 'No file chosen'}
+              </span>
+            </label>
+          </div>
+        </div>
+
+        <button
+          type="submit"
+          className="login-form__button"
+          onChange={() => handleSubmit}
+        >
+          Sign Up
+        </button>
+      </form>
+
+      {showModal && <Modal onClose={setShowModal} />}
+    </>
   );
 }
 

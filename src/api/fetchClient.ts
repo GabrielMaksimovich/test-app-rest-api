@@ -4,16 +4,10 @@ const BASE_URL = 'https://frontend-test-assignment-api.abz.agency/api/v1';
 
 type RequestMethod = 'GET' | 'POST' | 'PATCH' | 'DELETE';
 const currentToken = () => {
-  // eslint-disable-next-line no-console
-  console.log('GET TOKEN');
-
   return localStorage.getItem('API_TOKEN') || '';
 };
 
 const setCurrentToken = (token: string) => {
-  // eslint-disable-next-line no-console
-  console.log('SRT TOKEN');
-
   return localStorage.setItem('API_TOKEN', token);
 };
 
@@ -25,15 +19,11 @@ function request<T>(
   const options: RequestInit = { method };
 
   if (data) {
-    // eslint-disable-next-line no-console
     options.body = data;
     options.headers = {
       Token: currentToken(),
     };
   }
-
-  // eslint-disable-next-line no-console
-  console.log(BASE_URL + url);
 
   return fetch(BASE_URL + url, options)
     .then(response => {

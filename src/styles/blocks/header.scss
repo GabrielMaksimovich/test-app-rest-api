@@ -1,8 +1,6 @@
-@import '../utils/colors';
+@import '../utils';
 
 .header {
-  font-family: 'Nunito', serif;
-
   background: $white_color;
 
   &__content {
@@ -15,6 +13,14 @@
 
     margin: 0 auto;
     padding: 0 16px;
+
+    @include onTablet {
+      padding: 0 32px;
+    }
+
+    @include onDesktop {
+      padding: 0;
+    }
   }
 
   &__logo {
