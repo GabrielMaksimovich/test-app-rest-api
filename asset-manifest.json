@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/test-app-rest-api/static/css/main.0dfb3a88.chunk.css",
-    "main.js": "/test-app-rest-api/static/js/main.21bb363d.chunk.js",
-    "main.js.map": "/test-app-rest-api/static/js/main.21bb363d.chunk.js.map",
+    "main.css": "/test-app-rest-api/static/css/main.968d129d.chunk.css",
+    "main.js": "/test-app-rest-api/static/js/main.0f2a3167.chunk.js",
+    "main.js.map": "/test-app-rest-api/static/js/main.0f2a3167.chunk.js.map",
     "runtime-main.js": "/test-app-rest-api/static/js/runtime-main.bd5fef3e.js",
     "runtime-main.js.map": "/test-app-rest-api/static/js/runtime-main.bd5fef3e.js.map",
     "static/js/2.0b4781bc.chunk.js": "/test-app-rest-api/static/js/2.0b4781bc.chunk.js",
     "static/js/2.0b4781bc.chunk.js.map": "/test-app-rest-api/static/js/2.0b4781bc.chunk.js.map",
     "index.html": "/test-app-rest-api/index.html",
-    "static/css/main.0dfb3a88.chunk.css.map": "/test-app-rest-api/static/css/main.0dfb3a88.chunk.css.map",
+    "static/css/main.968d129d.chunk.css.map": "/test-app-rest-api/static/css/main.968d129d.chunk.css.map",
     "static/js/2.0b4781bc.chunk.js.LICENSE.txt": "/test-app-rest-api/static/js/2.0b4781bc.chunk.js.LICENSE.txt",
     "static/media/main.scss": "/test-app-rest-api/static/media/banner.be7665f8.jpeg",
     "static/media/logo.8bb55362.svg": "/test-app-rest-api/static/media/logo.8bb55362.svg"
@@ -16,7 +16,7 @@
   "entrypoints": [
     "static/js/runtime-main.bd5fef3e.js",
     "static/js/2.0b4781bc.chunk.js",
-    "static/css/main.0dfb3a88.chunk.css",
-    "static/js/main.21bb363d.chunk.js"
+    "static/css/main.968d129d.chunk.css",
+    "static/js/main.0f2a3167.chunk.js"
   ]
 }
